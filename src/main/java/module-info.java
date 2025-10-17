@@ -2,7 +2,6 @@ module co.edu.uniquindio.poo.prueba {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.graphics;
-    requires co.edu.uniquindio.poo.prueba;
 
 
     opens co.edu.uniquindio.poo.prueba to javafx.fxml;

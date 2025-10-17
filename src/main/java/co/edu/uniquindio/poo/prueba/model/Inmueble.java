@@ -1,19 +1,27 @@
 package co.edu.uniquindio.poo.prueba.model;
 
-import javafx.util.Builder;
-
 public class Inmueble {
 
+    private String tipo;
     private String ciudad;
     private String numHabitacion;
     private String numPiso;
     private double precio;
 
-    public Inmueble(String ciudad,String numHabitacion,String numPiso, double precio){
-        this.ciudad=ciudad;
-        this.numHabitacion=numHabitacion;
-        this.numPiso=numPiso;
-        this.precio=precio;
+    public Inmueble(String tipo, String ciudad, String numHabitacion, String numPiso, double precio) {
+        this.tipo = tipo;
+        this.ciudad = ciudad;
+        this.numHabitacion = numHabitacion;
+        this.numPiso = numPiso;
+        this.precio = precio;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getCiudad() {

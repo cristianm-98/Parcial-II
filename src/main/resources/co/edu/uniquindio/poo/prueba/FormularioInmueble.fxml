@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="346.0" prefWidth="523.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.prueba.controllers.FormularioInmuebleControllers">
+   <children>
+      <Pane prefHeight="346.0" prefWidth="523.0">
+         <children>
+            <Label layoutX="225.0" layoutY="22.0" text="FORMULARIO" />
+            <Label layoutX="63.0" layoutY="95.0" text="Tipo" />
+            <Label layoutX="63.0" layoutY="125.0" text="Ciudad" />
+            <Label layoutX="63.0" layoutY="159.0" text="Numero de Habitación" />
+            <Label layoutX="63.0" layoutY="192.0" text="Numero de pisos" />
+            <Label layoutX="65.0" layoutY="227.0" text="Precio" />
+            <TextField fx:id="txtTipo" layoutX="225.0" layoutY="91.0" />
+            <TextField fx:id="txtCiudad" layoutX="226.0" layoutY="121.0" />
+            <TextField fx:id="txtHabitacion" layoutX="226.0" layoutY="155.0" />
+            <TextField fx:id="txtPiso" layoutX="226.0" layoutY="188.0" />
+            <TextField fx:id="txtPrecio" layoutX="226.0" layoutY="223.0" />
+            <Button fx:id="btnAgregar" layoutX="214.0" layoutY="299.0" mnemonicParsing="false" onAction="#onAgregar" text="Agregar" />
+            <Button fx:id="btnRegresar" layoutX="300.0" layoutY="299.0" mnemonicParsing="false" onAction="#onRegresar" text="Regresar" />
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>

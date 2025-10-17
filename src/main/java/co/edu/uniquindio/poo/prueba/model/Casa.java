@@ -2,17 +2,23 @@ package co.edu.uniquindio.poo.prueba.model;
 
 public class Casa extends Inmueble {
 
-    //Se implementa el patron Builder
     private Casa(Builder builder) {
-        super(builder.ciudad, builder.numHabitacion, builder.numPiso, builder.precio);
+        super(builder.tipo,builder.ciudad, builder.numHabitacion, builder.numPiso, builder.precio);
 
     }
 
     public static class Builder {
+        private String tipo;
         private String ciudad;
         private String numHabitacion;
         private String numPiso;
         private double precio;
+
+
+        public Builder tipo(String tipo){
+            this.tipo=tipo;
+            return this;
+        }
 
         public Builder ciudad(String ciudad) {
             this.ciudad = ciudad;

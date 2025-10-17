@@ -32,23 +32,23 @@ public class MenuPrincipalControllers {
 
     @FXML
     void onFormulario(ActionEvent event) {
-//        try {
-//            FXMLLoader loader = new FXMLLoader(App.class.getResource("/co/edu/uniquindio/poo/prueba/FormularioProducto.fxml"));
-//            Parent formulario = loader.load();
-//
-//            // Obtener el controlador del formulario
-//            FormularioProductoController controller = loader.getController();
-//            controller.setDashboardController(this);
-//
-//            // Reemplazar el contenido del contenedor principal
-//            menuPrincipal.getChildren().clear();
-//            menuPrincipal.getChildren().add(formulario);
-//
-//        } catch (IOException e) {
-//            mostrarAlerta("Error", "No se pudo cargar el formulario", Alert.AlertType.ERROR);
-//            e.printStackTrace();
-//        }
+        try {
+            FXMLLoader loader = new FXMLLoader(App.class.getResource("/co/edu/uniquindio/poo/prueba/FormularioInmueble.fxml"));
+            Parent formulario = loader.load();
 
+            // Obtener el controlador del formulario
+            FormularioInmuebleControllers controller = loader.getController();
+            controller.setMenuPrincipalControllers(this);
+
+
+            // Reemplazar el contenido del contenedor principal
+            menuPrincipal.getChildren().clear();
+            menuPrincipal.getChildren().add(formulario);
+
+        } catch (IOException e) {
+            mostrarAlerta("Error", "No se pudo cargar el formulario", Alert.AlertType.ERROR);
+            e.printStackTrace();
+        }
     }
 
     @FXML
