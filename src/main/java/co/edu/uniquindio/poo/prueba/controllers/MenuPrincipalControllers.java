@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
 public class MenuPrincipalControllers {
 
@@ -31,6 +32,8 @@ public class MenuPrincipalControllers {
     private AnchorPane menuPrincipal;
 
     @FXML
+    private Pane menuSecundario;
+    @FXML
     void onFormulario(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(App.class.getResource("/co/edu/uniquindio/poo/prueba/FormularioInmueble.fxml"));
@@ -42,18 +45,41 @@ public class MenuPrincipalControllers {
 
 
             // Reemplazar el contenido del contenedor principal
-            menuPrincipal.getChildren().clear();
-            menuPrincipal.getChildren().add(formulario);
+            menuSecundario.getChildren().clear();
+            menuSecundario.getChildren().add(formulario);
 
         } catch (IOException e) {
             mostrarAlerta("Error", "No se pudo cargar el formulario", Alert.AlertType.ERROR);
             e.printStackTrace();
         }
     }
+    private void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipo) {
+        Alert alerta = new Alert(tipo);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
+    }
 
     @FXML
     void onListaProducto(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(App.class.getResource("/co/edu/uniquindio/prueba/formularioInmueble.fxml"));
+            Parent listaProducto = loader.load();
 
+            // Obtener el controlador del formulario
+            FormularioInmuebleControllers controllers= loader.getController();
+            controllers.setMenuPrincipalControllers(this);
+
+
+            // Reemplazar el contenido del contenedor principal
+            menuSecundario.getChildren().clear();
+            menuSecundario.getChildren().add(listaProducto);
+
+        } catch (IOException e) {
+            mostrarAlerta("Error", "No se pudo cargar el formulario", Alert.AlertType.ERROR);
+            e.printStackTrace();
+        }
     }
 
     @FXML

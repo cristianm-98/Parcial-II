@@ -6,7 +6,7 @@ import co.edu.uniquindio.poo.prueba.model.Inmueble;
 //Se implementa el patron FactoryMethod
 public class FactoryApartamento implements FactoyInmueble{
     @Override
-    public Inmueble crearInmueble(String tipo,String ciudad, String numHabitacion, String numPiso, double precio) {
+    public Inmueble crearInmueble(String id,String tipo,String ciudad, String numHabitacion, String numPiso, double precio) {
         return new Apartamento.Builder()
                 .tipo(tipo)
                 .ciudad(ciudad)

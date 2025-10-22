@@ -7,23 +7,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-
 <AnchorPane fx:id="menuPrincipal" prefHeight="273.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.prueba.controllers.MenuPrincipalControllers">
    <children>
       <VBox layoutY="-1.0" prefHeight="273.0" prefWidth="178.0">
          <children>
-            <Pane prefHeight="475.0" prefWidth="178.0" />
+            <Pane prefHeight="475.0" prefWidth="178.0">
+               <children>
+                  <Button fx:id="btnFormulario" layoutX="52.0" layoutY="84.0" mnemonicParsing="false" onAction="#onFormulario" text="Formulario" />
+                  <Button fx:id="btnListaProducto" layoutX="43.0" layoutY="137.0" mnemonicParsing="false" onAction="#onListaProducto" text="Lista Producto" />
+                  <Label layoutX="29.0" layoutY="29.0" text="BIENVENIDO AL PANEL" />
+               </children></Pane>
          </children>
       </VBox>
       <HBox layoutX="178.0" prefHeight="273.0" prefWidth="514.0">
          <children>
-            <Pane prefHeight="273.0" prefWidth="522.0">
-               <children>
-                  <Button fx:id="btnFormulario" layoutX="134.0" layoutY="192.0" mnemonicParsing="false" onAction="#onFormulario" text="Formulario" />
-                  <Button fx:id="btnListaProducto" layoutX="272.0" layoutY="192.0" mnemonicParsing="false" onAction="#onListaProducto" text="Lista Producto" />
-                  <Label layoutX="195.0" layoutY="36.0" text="BIENVENIDO AL PANEL" />
-               </children>
-            </Pane>
+            <Pane fx:id="menuSecundario" prefHeight="273.0" prefWidth="522.0" />
          </children>
       </HBox>
    </children>

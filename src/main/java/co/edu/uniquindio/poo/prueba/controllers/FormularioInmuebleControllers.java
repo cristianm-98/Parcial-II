@@ -2,10 +2,15 @@ package co.edu.uniquindio.poo.prueba.controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import co.edu.uniquindio.poo.prueba.singleton.Empresa;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
 public class FormularioInmuebleControllers {
 
@@ -22,6 +27,9 @@ public class FormularioInmuebleControllers {
     private Button btnRegresar;
 
     @FXML
+    private ComboBox<String> cbTipoInmueble;
+
+    @FXML
     private TextField txtCiudad;
 
     @FXML
@@ -36,6 +44,12 @@ public class FormularioInmuebleControllers {
     @FXML
     private TextField txtTipo;
 
+    private Empresa empresa;
+    private MenuPrincipalControllers menuPrincipalControllers;
+    private AnchorPane menuPrincipal;
+    private Pane menuSecundario;
+
+
     @FXML
     void onAgregar(ActionEvent event) {
 
@@ -48,12 +62,13 @@ public class FormularioInmuebleControllers {
 
     @FXML
     void initialize() {
-
-
+        empresa = Empresa.getInstance();
+        cbTipoInmueble.getItems().addAll("Apartamento","Casa","Finca","Local");
     }
-    public void setMenuPrincipalControllers(MenuPrincipalControllers dashboardController) {
-        this.setMenuPrincipalControllers(); = dashboardController;
-        this.setMenuPrincipalControllers(); = dashboardController.getMenuPrincipal();
+
+    public void setMenuPrincipalControllers(MenuPrincipalControllers menuPrincipalControllers) {
+        this.menuPrincipalControllers = menuPrincipalControllers;
+        this.menuSecundario = menuPrincipalControllers.getMenuPrincipal();
     }
 
 }

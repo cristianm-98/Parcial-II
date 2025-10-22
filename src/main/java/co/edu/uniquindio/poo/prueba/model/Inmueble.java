@@ -2,20 +2,28 @@ package co.edu.uniquindio.poo.prueba.model;
 
 public class Inmueble {
 
+    private String id;
     private String tipo;
     private String ciudad;
     private String numHabitacion;
     private String numPiso;
     private double precio;
 
-    public Inmueble(String tipo, String ciudad, String numHabitacion, String numPiso, double precio) {
+    public Inmueble(String id,String tipo, String ciudad, String numHabitacion, String numPiso, double precio) {
+        this.id=id;
         this.tipo = tipo;
         this.ciudad = ciudad;
         this.numHabitacion = numHabitacion;
         this.numPiso = numPiso;
         this.precio = precio;
     }
+    public String getId(){
+        return id;
+    }
 
+    public void setId(String id){
+        this.id=id;
+    }
     public String getTipo() {
         return tipo;
     }

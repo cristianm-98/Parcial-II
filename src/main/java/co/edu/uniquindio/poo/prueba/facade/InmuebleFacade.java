@@ -17,17 +17,17 @@ public class InmuebleFacade {
         this.factoryFinca = new FactoryFinca();
         this.factoryLocal = new FactoryLocal();
     }
-    public Inmueble crearApartamento(String tipo,String ciudad, String numHabitacion, String numPiso, double precio) {
-        return factoyApartamento.crearInmueble(tipo,ciudad,numHabitacion, numPiso, precio);
+    public Inmueble crearApartamento(String id,String tipo,String ciudad, String numHabitacion, String numPiso, double precio) {
+        return factoyApartamento.crearInmueble(id,tipo,ciudad,numHabitacion, numPiso, precio);
     }
-    public Inmueble crearCasa(String tipo,String ciudad, String numHabitacion, String numPiso, double precio) {
-        return factoryCasa.crearInmueble(tipo,ciudad,numHabitacion, numPiso, precio);
+    public Inmueble crearCasa(String id, String tipo,String ciudad, String numHabitacion, String numPiso, double precio) {
+        return factoryCasa.crearInmueble(id,tipo,ciudad,numHabitacion, numPiso, precio);
     }
-    public Inmueble crearFinca(String tipo,String ciudad, String numHabitacion, String numPiso, double precio) {
-        return factoryFinca.crearInmueble(tipo,ciudad,numHabitacion, numPiso, precio);
+    public Inmueble crearFinca(String id,String tipo,String ciudad, String numHabitacion, String numPiso, double precio) {
+        return factoryFinca.crearInmueble(id,tipo,ciudad,numHabitacion, numPiso, precio);
     }
-    public Inmueble crearLocal(String tipo,String ciudad, String numHabitacion, String numPiso, double precio) {
-        return factoryLocal .crearInmueble(tipo,ciudad,numHabitacion, numPiso, precio);
+    public Inmueble crearLocal(String id, String tipo,String ciudad, String numHabitacion, String numPiso, double precio) {
+        return factoryLocal .crearInmueble(id,tipo,ciudad,numHabitacion, numPiso, precio);
     }
 
 }

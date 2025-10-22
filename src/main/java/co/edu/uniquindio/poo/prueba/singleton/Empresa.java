@@ -1,0 +1,47 @@
+package co.edu.uniquindio.poo.prueba.singleton;
+
+import co.edu.uniquindio.poo.prueba.model.Inmueble;
+
+import java.util.ArrayList;
+
+public class Empresa {
+
+    //Se utiliza el patron Singleton
+
+    private static Empresa instance;
+    private ArrayList<Inmueble>inmuebles;
+
+
+    private Empresa(){
+        inmuebles=new ArrayList<>();
+        cargarDatos();
+    }
+
+    public static Empresa getInstance() {
+        if (instance == null) {
+            instance = new Empresa();
+        }
+        return instance;
+    }
+
+    private void cargarDatos(){
+
+    }
+
+    public ArrayList<Inmueble> getInmuebles() {
+        return inmuebles;
+    }
+
+    public void setInmuebles(ArrayList<Inmueble> inmuebles) {
+        this.inmuebles = inmuebles;
+    }
+
+    public void agregarInmueble(Inmueble inmueble){
+        inmuebles.add(inmueble);
+    }
+
+    public boolean eliminarInmueble(Inmueble inmueble){
+        return inmuebles.remove(inmueble);
+    }
+
+}

@@ -3,17 +3,22 @@ package co.edu.uniquindio.poo.prueba.model;
 public class Casa extends Inmueble {
 
     private Casa(Builder builder) {
-        super(builder.tipo,builder.ciudad, builder.numHabitacion, builder.numPiso, builder.precio);
+        super(builder.id,builder.tipo,builder.ciudad, builder.numHabitacion, builder.numPiso, builder.precio);
 
     }
 
     public static class Builder {
+        private String id;
         private String tipo;
         private String ciudad;
         private String numHabitacion;
         private String numPiso;
         private double precio;
 
+        public Builder id(String id){
+            this.id=id;
+            return this;
+        }
 
         public Builder tipo(String tipo){
             this.tipo=tipo;
