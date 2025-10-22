@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.prueba.singleton;
 
+import co.edu.uniquindio.poo.prueba.model.Apartamento;
 import co.edu.uniquindio.poo.prueba.model.Inmueble;
 
 import java.util.ArrayList;
@@ -25,7 +26,14 @@ public class Empresa {
     }
 
     private void cargarDatos(){
-
+        inmuebles.add(new Inmueble("001","Apartamento","Pereira","5","2",2500));
+        inmuebles.add(new Apartamento.Builder()
+                .id("001").tipo("Apartamento")
+                .ciudad("Armenia")
+                .numHabitacion("4")
+                .numPiso("1")
+                .precio(2500)
+                .build());
     }
 
     public ArrayList<Inmueble> getInmuebles() {

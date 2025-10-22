@@ -64,17 +64,17 @@ public class MenuPrincipalControllers {
     @FXML
     void onListaProducto(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(App.class.getResource("/co/edu/uniquindio/prueba/formularioInmueble.fxml"));
-            Parent listaProducto = loader.load();
+            FXMLLoader loader = new FXMLLoader(App.class.getResource("/co/edu/uniquindio/poo/prueba/ListaApartamentos.fxml"));
+            Parent listaInmuebles = loader.load();
 
-            // Obtener el controlador del formulario
-            FormularioInmuebleControllers controllers= loader.getController();
+            // Obtener el controlador de la lista de Apartamentos
+            ListaApartamentosControllers controllers = loader.getController();
             controllers.setMenuPrincipalControllers(this);
 
 
             // Reemplazar el contenido del contenedor principal
             menuSecundario.getChildren().clear();
-            menuSecundario.getChildren().add(listaProducto);
+            menuSecundario.getChildren().add(listaInmuebles);
 
         } catch (IOException e) {
             mostrarAlerta("Error", "No se pudo cargar el formulario", Alert.AlertType.ERROR);

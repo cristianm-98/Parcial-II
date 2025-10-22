@@ -8,4 +8,5 @@ module co.edu.uniquindio.poo.prueba {
     exports co.edu.uniquindio.poo.prueba.app;
     opens co.edu.uniquindio.poo.prueba.controllers to javafx.fxml;
     opens co.edu.uniquindio.poo.prueba.app to javafx.fxml;
+    opens co.edu.uniquindio.poo.prueba.model to javafx.base;
 }
