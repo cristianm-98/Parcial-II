@@ -5,7 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.poo.prueba.app.App;
-import co.edu.uniquindio.poo.prueba.model.Inmueble;
+import co.edu.uniquindio.poo.prueba.builder.Inmueble;
 import co.edu.uniquindio.poo.prueba.singleton.Empresa;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -61,6 +61,24 @@ public class ListaApartamentosControllers {
 
     @FXML
     void onEliminar(ActionEvent event) {
+        Inmueble inmuebleSeleccionado = tbListaInmuebles.getSelectionModel().getSelectedItem();
+
+        if(inmuebleSeleccionado==null){
+            mostrarAlerta("Error","Por favor seleccionar el inmueble a eliminar", Alert.AlertType.WARNING);
+        }
+
+        Alert confirmacion=new Alert(Alert.AlertType.INFORMATION);
+        confirmacion.setTitle("Confirmar eliminacion");
+        confirmacion.setHeaderText("¿Esta seguro de eliminar el inmueble");
+        confirmacion.setContentText("Inmueble: " + inmuebleSeleccionado.getTipo());
+
+        confirmacion.showAndWait().ifPresent(response->{
+            if(response==ButtonType.OK){
+                empresa.eliminarInmueble(inmuebleSeleccionado);
+                cargarInmueble();
+                mostrarAlerta("Exito","Inmueble eliminado correctamente", Alert.AlertType.INFORMATION);
+            }
+        });
 
     }
 

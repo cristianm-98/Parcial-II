@@ -1,7 +1,7 @@
 package co.edu.uniquindio.poo.prueba.singleton;
 
-import co.edu.uniquindio.poo.prueba.model.Apartamento;
-import co.edu.uniquindio.poo.prueba.model.Inmueble;
+import co.edu.uniquindio.poo.prueba.builder.Apartamento;
+import co.edu.uniquindio.poo.prueba.builder.Inmueble;
 
 import java.util.ArrayList;
 

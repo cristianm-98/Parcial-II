@@ -1,9 +1,9 @@
-package co.edu.uniquindio.poo.prueba.model;
+package co.edu.uniquindio.poo.prueba.builder;
 
-public class Local extends Inmueble{
+public class Apartamento extends Inmueble {
 
     //Se implementa el patron Builder
-    private Local(Builder builder) {
+    private Apartamento(Builder builder) {
         super(builder.id,builder.tipo,builder.ciudad, builder.numHabitacion, builder.numPiso, builder.precio);
 
     }
@@ -46,8 +46,8 @@ public class Local extends Inmueble{
             return this;
         }
 
-        public Local build() {
-            return new Local(this);
+        public Apartamento build() {
+            return new Apartamento(this);
         }
     }
 }

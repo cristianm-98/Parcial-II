@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.prueba.model;
+package co.edu.uniquindio.poo.prueba.builder;
 
 public class Finca extends Inmueble {
 

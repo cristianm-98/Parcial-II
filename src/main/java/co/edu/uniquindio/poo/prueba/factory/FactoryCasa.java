@@ -1,8 +1,7 @@
 package co.edu.uniquindio.poo.prueba.factory;
 
-import co.edu.uniquindio.poo.prueba.model.Apartamento;
-import co.edu.uniquindio.poo.prueba.model.Casa;
-import co.edu.uniquindio.poo.prueba.model.Inmueble;
+import co.edu.uniquindio.poo.prueba.builder.Casa;
+import co.edu.uniquindio.poo.prueba.builder.Inmueble;
 
 //Se implementa el patron FactoryMethod
 public class FactoryCasa implements FactoyInmueble{

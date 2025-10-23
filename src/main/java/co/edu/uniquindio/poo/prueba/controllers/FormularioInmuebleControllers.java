@@ -6,7 +6,7 @@ import java.util.ResourceBundle;
 
 import co.edu.uniquindio.poo.prueba.app.App;
 import co.edu.uniquindio.poo.prueba.facade.InmuebleFacade;
-import co.edu.uniquindio.poo.prueba.model.Inmueble;
+import co.edu.uniquindio.poo.prueba.builder.Inmueble;
 import co.edu.uniquindio.poo.prueba.singleton.Empresa;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -140,6 +140,22 @@ public class FormularioInmuebleControllers {
     public boolean validarCampos(){
         if(txtId.getText().trim().isEmpty()){
             mostrarAlerta("Error","El id es obligatorio",Alert.AlertType.WARNING);
+            return false;
+        }
+        if(txtCiudad.getText().trim().isEmpty()){
+            mostrarAlerta("Error","La ciudad es obligatorio",Alert.AlertType.WARNING);
+            return false;
+        }
+        if(txtHabitacion.getText().trim().isEmpty()){
+            mostrarAlerta("Error","La habitacion es obligatorio",Alert.AlertType.WARNING);
+            return false;
+        }
+        if(txtPiso.getText().trim().isEmpty()){
+            mostrarAlerta("Error","El piso es obligatorio",Alert.AlertType.WARNING);
+            return false;
+        }
+        if(txtPrecio.getText().trim().isEmpty()){
+            mostrarAlerta("Error","El precio es obligatorio",Alert.AlertType.WARNING);
             return false;
         }
         return true;
