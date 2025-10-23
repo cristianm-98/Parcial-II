@@ -1,23 +1,30 @@
 package co.edu.uniquindio.poo.prueba.controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import co.edu.uniquindio.poo.prueba.app.App;
 import co.edu.uniquindio.poo.prueba.model.Inmueble;
 import co.edu.uniquindio.poo.prueba.singleton.Empresa;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Menu;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 public class ListaApartamentosControllers {
+
+    private Empresa empresa;
+    private MenuPrincipalControllers menuPrincipalControllers;
+    private AnchorPane menuPrincipal;
+    private Pane menuSecundario;
+    private ObservableList<Inmueble> listaInmubles;
 
     @FXML
     private ResourceBundle resources;
@@ -52,12 +59,6 @@ public class ListaApartamentosControllers {
     @FXML
     private TableView<Inmueble> tbListaInmuebles;
 
-    private Empresa empresa;
-    private MenuPrincipalControllers menuPrincipalControllers;
-    private AnchorPane menuPrincipal;
-    private Pane menuSecundario;
-    private ObservableList<Inmueble>listaInmubles;
-
     @FXML
     void onEliminar(ActionEvent event) {
 
@@ -65,7 +66,7 @@ public class ListaApartamentosControllers {
 
     @FXML
     void onRegresar(ActionEvent event) {
-
+        volverMenuPrincipal();
     }
 
     @FXML
@@ -82,15 +83,38 @@ public class ListaApartamentosControllers {
         cargarInmueble();
     }
 
-    public void cargarInmueble(){
-        listaInmubles= FXCollections.observableArrayList(empresa.getInmuebles());
+    public void cargarInmueble() {
+        listaInmubles = FXCollections.observableArrayList(empresa.getInmuebles());
         tbListaInmuebles.setItems(listaInmubles);
     }
 
+    private void volverMenuPrincipal() {
+        try {
+            FXMLLoader loader = new FXMLLoader(App.class.getResource("/co/edu/uniquindio/poo/prueba/MenuPrincipal.fxml"));
+            Parent menu = loader.load();
+
+            menuSecundario.getChildren().clear();
+            menuSecundario.getChildren().add(menu);
+
+        } catch (IOException e) {
+            mostrarAlerta("Error", "No se pudo volver al Menu Principal", Alert.AlertType.ERROR);
+            e.printStackTrace();
+
+        }
+    }
 
     public void setMenuPrincipalControllers(MenuPrincipalControllers menuPrincipalControllers) {
         this.menuPrincipalControllers = menuPrincipalControllers;
         this.menuSecundario = menuPrincipalControllers.getMenuPrincipal();
     }
+
+    private void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipo) {
+        Alert alerta = new Alert(tipo);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
+    }
+
 
 }

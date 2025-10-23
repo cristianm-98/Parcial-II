@@ -26,7 +26,6 @@ public class Empresa {
     }
 
     private void cargarDatos(){
-        inmuebles.add(new Inmueble("001","Apartamento","Pereira","5","2",2500));
         inmuebles.add(new Apartamento.Builder()
                 .id("001").tipo("Apartamento")
                 .ciudad("Armenia")
@@ -52,4 +51,10 @@ public class Empresa {
         return inmuebles.remove(inmueble);
     }
 
+    public Inmueble buscarPorCodigo(String id) {
+        return inmuebles.stream()
+                .filter(p -> p.getId().equals(id))
+                .findFirst()
+                .orElse(null);
+    }
 }

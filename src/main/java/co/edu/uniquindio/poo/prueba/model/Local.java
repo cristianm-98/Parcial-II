@@ -16,7 +16,7 @@ public class Local extends Inmueble{
         private String numPiso;
         private double precio;
 
-        private Builder id(String id){
+        public Builder id(String id){
             this.id=id;
             return this;
         }

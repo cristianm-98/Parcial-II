@@ -21,7 +21,7 @@
             <Label layoutX="63.0" layoutY="183.0" text="Numero de Habitación" />
             <Label layoutX="63.0" layoutY="216.0" text="Numero de pisos" />
             <Label layoutX="65.0" layoutY="251.0" text="Precio" />
-            <TextField fx:id="txtTipo" layoutX="226.0" layoutY="109.0" />
+            <TextField fx:id="txtId" layoutX="226.0" layoutY="109.0" />
             <TextField fx:id="txtCiudad" layoutX="226.0" layoutY="145.0" />
             <TextField fx:id="txtHabitacion" layoutX="226.0" layoutY="179.0" />
             <TextField fx:id="txtPiso" layoutX="226.0" layoutY="212.0" />
