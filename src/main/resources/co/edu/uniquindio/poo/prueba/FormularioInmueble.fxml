@@ -12,7 +12,7 @@
    <children>
       <Pane prefHeight="346.0" prefWidth="523.0">
          <children>
-            <Label layoutX="225.0" layoutY="22.0" text="FORMULARIO" />
+            <Label fx:id="titulo" layoutX="225.0" layoutY="22.0" text="FORMULARIO" />
             <Separator layoutX="33.0" layoutY="41.0" prefHeight="25.0" prefWidth="476.0" />
             <Label layoutX="59.0" layoutY="79.0" text="Tipo" />
             <ComboBox fx:id="cbTipoInmueble" layoutX="225.0" layoutY="75.0" prefWidth="150.0" />

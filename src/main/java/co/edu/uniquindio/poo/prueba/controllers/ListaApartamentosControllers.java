@@ -99,6 +99,7 @@ public class ListaApartamentosControllers {
         colPrecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
 
         cargarInmueble();
+        tbListaInmuebles.refresh();
     }
 
     public void cargarInmueble() {

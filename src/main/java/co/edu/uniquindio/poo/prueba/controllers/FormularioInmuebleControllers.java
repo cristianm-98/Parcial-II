@@ -91,6 +91,7 @@ public class FormularioInmuebleControllers {
             }
             empresa.agregarInmueble(inmueble);
             mostrarAlerta("Exito","Inmueble creado correctamente",Alert.AlertType.INFORMATION);
+            limpiarCampo();
 
         }catch (NumberFormatException e){
             mostrarAlerta("Error","el precio debe ser valor numerico valido",Alert.AlertType.ERROR);
@@ -122,6 +123,7 @@ public class FormularioInmuebleControllers {
             e.printStackTrace();
 
         }
+
     }
 
     public void setMenuPrincipalControllers(MenuPrincipalControllers menuPrincipalControllers) {
@@ -160,6 +162,16 @@ public class FormularioInmuebleControllers {
         }
         return true;
     }
+    public void limpiarCampo() {
+        txtId.clear();
+        txtCiudad.clear();
+        txtHabitacion.clear();
+        txtPiso.clear();
+        txtPrecio.clear();
+        cbTipoInmueble.setValue(null);
+
+    }
+
 
 
 }

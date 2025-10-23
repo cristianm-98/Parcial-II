@@ -19,8 +19,8 @@ public class App extends Application {
 
         primaryStage.setTitle("Sistema de Gestión");
         primaryStage.setScene(scene);
-        primaryStage.setMinWidth(800);
-        primaryStage.setMinHeight(500);
+        primaryStage.setMinWidth(785);
+        primaryStage.setMinHeight(395);
         primaryStage.show();
     }
     public static void main(String[] args) {

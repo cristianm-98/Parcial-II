@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -15,13 +17,20 @@
                <children>
                   <Button fx:id="btnFormulario" layoutX="52.0" layoutY="84.0" mnemonicParsing="false" onAction="#onFormulario" text="Formulario" />
                   <Button fx:id="btnListaProducto" layoutX="43.0" layoutY="137.0" mnemonicParsing="false" onAction="#onListaProducto" text="Lista Producto" />
-                  <Label layoutX="29.0" layoutY="29.0" text="BIENVENIDO AL PANEL" />
+                  <Label fx:id="Titulo" layoutX="29.0" layoutY="29.0" text="BIENVENIDO AL PANEL" />
                </children></Pane>
          </children>
       </VBox>
       <HBox layoutX="178.0" prefHeight="273.0" prefWidth="514.0">
          <children>
-            <Pane fx:id="menuSecundario" prefHeight="273.0" prefWidth="522.0" />
+            <Pane fx:id="menuSecundario" prefHeight="273.0" prefWidth="522.0">
+               <children>
+                  <ImageView fitHeight="177.0" fitWidth="216.0" layoutX="155.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagen/Inmueble.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
          </children>
       </HBox>
    </children>
